@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "cssnano": "^7.0.7",
+    "purgecss": "^7.0.2"
+  }
+}
