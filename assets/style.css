@@ -368,3 +368,13 @@ input[type="submit"] {
     width: 80%;
   }
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 16px 0;
+}
+footer p {
+  margin: 0px;
+}

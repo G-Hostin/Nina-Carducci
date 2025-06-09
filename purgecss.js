@@ -6,10 +6,39 @@ const contentFiles = [
   "./index.html",
   "./assets/scripts.js",
   "./assets/maugallery.js",
+  "./assets/bootstrap/bootstrap.bundle.js",
+  "./assets/bootstrap/bootstrap.bundle.js.map",
+  "./assets/bootstrap/bootstrap.bundle.min.js",
+  "./assets/bootstrap/bootstrap.bundle.min.js.map",
 ];
 
 // Le fichier CSS à purger
 const cssFile = "./assets/bootstrap/bootstrap.css";
+
+// Classes à préserver pour pas qu'elles soient supprimées par PurgeCSS
+const safelist = [
+  "col-12",
+  "col-sm-6",
+  "col-md-4",
+  "col-lg-4",
+  "col-xl-4",
+  "gallery-item",
+  "img-fluid",
+  "mb-4",
+  "py-3",
+  "nav-link",
+  "active",
+  "carousel",
+  "carousel-item",
+  "carousel-control-prev",
+  "carousel-control-next",
+  "lightboxImage",
+  "mg-prev",
+  "mg-next",
+  "tags-bar",
+  "nav-pills",
+  "nav-link",
+];
 
 // Créer une purge PurgeCSS
 const purge = new purgecss.PurgeCSS();
@@ -17,8 +46,9 @@ const purge = new purgecss.PurgeCSS();
 // Exécuter la purge
 purge
   .purge({
-    content: contentFiles, // Analyser ces fichiers pour détecter les classes utilisées
-    css: [cssFile], // Le fichier CSS à purger
+    content: contentFiles,
+    css: [cssFile],
+    safelist: safelist,
   })
   .then((result) => {
     // Sauvegarder le CSS purgé dans un nouveau fichier
