@@ -1215,7 +1215,6 @@ textarea {
   margin-bottom: 1rem;
   margin-left: 15%;
   list-style: none;
-  background-color: green;
 }
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
@@ -1227,7 +1226,7 @@ textarea {
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: red !important;
+  background-color: #fff;
   background-clip: padding-box;
   border: 0;
   border-top: 10px solid transparent;
